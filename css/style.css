@@ -4,6 +4,7 @@
   --orange: #df7609;
   --creme: #ffe0BA;
   --vert-progress: #00FF09;
+  --brun: #93590D;
 
   --font-texte: "Inter", sans-serif;
   --font-titre: "Inter", sans-serif;
@@ -42,4 +43,43 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
+}
+.hero {
+  background: var(--noir) url("../img/hero/hero.jpg") no-repeat right center / cover;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  padding: 0 120px;
+}
+.hero__titre {
+  font-family: var(--font-titre);
+  font-size: 80px;
+  font-style: italic;
+  font-weight: 800;
+  color: #fff;
+}
+.hero__slogan {
+  margin-top: 32px;
+  font-family: var(--font-titre);
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.3;
+  color: #fff;
+}
+.hero__slogan span { color: var(--orange); }
+
+.nade-du-jour {
+  background: var(--orange) url("../img/hero/hero-nade-du-jour.jpg") center / cover;
+  padding: 100px 20px;
+  text-align: center;
+}
+.nade-du-jour h2 {
+  font-family: var(--font-titre);
+  font-size: 72px;
+  font-style: italic;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--creme);
+  text-shadow: 4px 4px 0 var(--brun);
 }
