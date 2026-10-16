@@ -5,6 +5,7 @@
   --creme: #ffe0BA;
   --vert-progress: #00FF09;
   --brun: #93590D;
+  --vert-fonce: #05BF0B;
 
   --font-texte: "Inter", sans-serif;
   --font-titre: "Inter", sans-serif;
@@ -70,7 +71,7 @@ body {
 .hero__slogan span { color: var(--orange); }
 
 .nade-du-jour {
-  background: var(--orange) url("../img/hero/hero-nade-du-jour.jpg") center / cover;
+  background: var(--orange) url("../img/hero/fond-orange.jpg") center / cover;
   padding: 100px 20px;
   text-align: center;
 }
@@ -82,4 +83,117 @@ body {
   text-transform: uppercase;
   color: var(--creme);
   text-shadow: 4px 4px 0 var(--brun);
+}
+.cartes { padding: 80px 40px; }
+.cartes__titre {
+  font-family: var(--font-titre);
+  font-size: 32px;
+  text-transform: uppercase;
+  color: var(--creme);
+  margin: 0 0 40px 40px;
+}
+.cartes__grille {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 30px;
+}
+
+.carte {
+  display: block;
+  text-decoration: none;
+  color: var(--creme);
+  transition: transform 0.2s;
+}
+a.carte:hover { transform: translateY(-4px); }
+
+.carte__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+.carte__progression {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 24px 0;
+}
+.barre {
+  flex: 1;
+  height: 8px;
+  background: var(--vert-fonce);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.barre__remplie {
+  height: 100%;
+  background: var(--vert-progress);
+  border-radius: 999px;
+}
+.barre__pourcent { font-size: 14px; color: var(--vert-progress); }
+
+.carte__nom {
+  margin-top: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 18px;
+}
+
+/* Maps pas encore disponibles */
+.carte--bientot .carte__image { filter: grayscale(1) brightness(0.45); }
+.carte--bientot .carte__nom { opacity: 0.5; }
+.carte__etiquette {
+  margin: 14px 24px 0;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.connexion {
+  background: var(--orange) url("../img/hero/fond-orange.jpg") center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 120px;
+}
+.connexion h2 {
+  font-family: var(--font-titre);
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--creme);
+  text-shadow: 3px 3px 0 var(--brun);
+}
+.connexion__liste {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+.connexion__liste li {
+  width: fit-content;
+  padding: 10px 24px;
+  background: var(--creme);
+  color: var(--brun);
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+.connexion__liste li::before { content: "+"; margin-right: 24px; }
+.connexion__bouton {
+  padding: 24px 48px;
+  background: var(--creme);
+  color: var(--brun);
+  font-size: 28px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
