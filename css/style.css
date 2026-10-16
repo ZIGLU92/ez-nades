@@ -84,7 +84,7 @@ body {
   color: var(--creme);
   text-shadow: 4px 4px 0 var(--brun);
 }
-.cartes { padding: 80px 40px; }
+.cartes { padding: 80px 40px 160px; }
 .cartes__titre {
   font-family: var(--font-titre);
   font-size: 32px;
@@ -118,7 +118,7 @@ a.carte:hover { transform: translateY(-4px); }
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 14px 24px 0;
+  margin: 10px 24px 0;
 }
 .barre {
   flex: 1;
@@ -135,18 +135,18 @@ a.carte:hover { transform: translateY(-4px); }
 .barre__pourcent { font-size: 14px; color: var(--vert-progress); }
 
 .carte__nom {
-  margin-top: 14px;
+  margin-top: 18px;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 18px;
+  font-size: clamp(22px, 2.4vw, 36px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
 }
 
-/* Maps pas encore disponibles */
 .carte--bientot .carte__image { filter: grayscale(1) brightness(0.45); }
 .carte--bientot .carte__nom { opacity: 0.5; }
 .carte__etiquette {
-  margin: 14px 24px 0;
+  margin: 8px 24px 0;
   text-align: center;
   font-size: 14px;
   text-transform: uppercase;
