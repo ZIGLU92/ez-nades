@@ -5,7 +5,7 @@
   --creme: #ffe0BA;
   --vert-progress: #00FF09;
   --brun: #93590D;
-  --vert-fonce: #05BF0B;
+  --vert-fonce: #06A80C;
 
   --font-texte: "Inter", sans-serif;
   --font-titre: "Inter", sans-serif;
@@ -84,7 +84,7 @@ body {
   color: var(--creme);
   text-shadow: 4px 4px 0 var(--brun);
 }
-.cartes { padding: 80px 40px 160px; }
+.cartes { padding: 80px 40px 80px; }
 .cartes__titre {
   font-family: var(--font-titre);
   font-size: 32px;
