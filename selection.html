@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mirage - Nades CS2</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+    <a href="index.html" class="header__logo">
+      <img src="img/logo/logo.png" alt="Logo">
+    </a>
+    <nav class="header__nav">
+      <a href="#">Nades favorites</a>
+      <a href="#">Tutoriels</a>
+      <a href="#nade-du-jour">Nade du jour</a>
+      <a href="contact.html">Contactez-nous</a>
+    </nav>
+    <div class="header__actions">
+      <a href="#" class="btn">S'inscrire</a>
+      <a href="#" class="btn">Se connecter</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="map-hero">
+      <h1 class="map-hero__titre">Mirage</h1>
+    </section>
+
+    <div class="niveau">
+      <select class="niveau__select" aria-label="Niveau">
+        <option>Niveau 1</option>
+        <option disabled>Niveau 2 (bientôt)</option>
+      </select>
+    </div>
+
+    <div class="filtres">
+      <span class="filtres__titre">Filtres :</span>
+      <select class="filtres__select" aria-label="Type de nade">
+        <option>Type de nade</option>
+        <option>Smoke</option>
+      </select>
+      <select class="filtres__select" aria-label="Équipe">
+        <option>Équipe</option>
+        <option>T</option>
+        <option>CT</option>
+      </select>
+      <select class="filtres__select" aria-label="Type de lancer">
+        <option>Type de lancer</option>
+        <option>Jumpthrow</option>
+        <option>Sans jumpthrow</option>
+        <option>Walk throw</option>
+      </select>
+    </div>
+
+    <section class="smokes">
+      <a href="apprendre-site-a-stairs.html" class="smoke-carte">
+        <img src="img/smokes/site-a-stairs.jpg" alt="Smoke Site A Stairs sur Mirage" class="smoke-carte__image">
+        <h2 class="smoke-carte__nom">Site A - Stairs</h2>
+        <span class="smoke-carte__badge">
+          <img src="img/pictos/smoke-blanc.png" alt="" class="smoke-carte__picto">
+          Smoke
+        </span>
+      </a>
+
+      <a href="apprendre-mid-window.html" class="smoke-carte">
+        <img src="img/smokes/mid-window.jpg" alt="Smoke Mid Window sur Mirage" class="smoke-carte__image">
+        <h2 class="smoke-carte__nom">Mid - Window</h2>
+        <span class="smoke-carte__badge">
+          <img src="img/pictos/smoke-blanc.png" alt="" class="smoke-carte__picto">
+          Smoke
+        </span>
+      </a>
+    
+      <a href="apprendre-site-b-market.html" class="smoke-carte">
+        <img src="img/smokes/site-b-market.jpg" alt="Smoke Site B Market sur Mirage" class="smoke-carte__image">
+        <h2 class="smoke-carte__nom">Site B - Market</h2>
+        <span class="smoke-carte__badge">
+          <img src="img/pictos/smoke-blanc.png" alt="" class="smoke-carte__picto">
+          Smoke
+        </span>
+      </a>
+     
+    </section>
+
+    <section class="nade-du-jour" id="nade-du-jour">
+      <h2>Nade du jour</h2>
+    </section>
+  </main>
+
+</body>
+</html>
