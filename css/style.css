@@ -369,3 +369,103 @@ a.carte:hover { transform: translateY(-4px); }
   outline: 3px solid var(--orange);
   outline-offset: 2px;
 }
+/* ---------- Page apprendre ---------- */
+.map-hero--detail { gap: clamp(24px, 6vw, 90px); }
+.map-hero--detail .map-hero__titre { font-size: clamp(48px, 7.5vw, 100px); }
+.map-hero__infos {
+  padding-left: clamp(24px, 6vw, 90px);
+  border-left: 3px solid var(--creme);
+  font-size: clamp(20px, 2.8vw, 38px);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.8;
+  text-shadow: 3px 3px 0 var(--brun);
+}
+
+.version {
+  margin-bottom: 24px;
+  font-size: 16px;
+  color: #b8b8b8;
+}
+
+.video-cadre {
+  background: var(--orange) url("../img/hero/fond-orange.jpg") center / cover;
+  padding: clamp(16px, 4.5vw, 62px);
+}
+.video { aspect-ratio: 16 / 9; }
+.video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.apprendre {
+  display: grid;
+  grid-template-columns: 1fr clamp(260px, 26vw, 340px);
+  gap: 40px;
+  align-items: start;
+  padding: 40px 40px 80px;
+}
+.apprendre__principal .nade-du-jour { margin-top: 48px; }
+
+/* Boutons d'action */
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+.action {
+  --fond: #57a95c;
+  --bord: #245a28;
+  --texte: #0f2f12;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 96px;
+  padding: 0 40px;
+  background: var(--fond);
+  color: var(--texte);
+  border: 6px solid var(--bord);
+  font-family: var(--font-texte);
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+.action:hover { filter: brightness(1.1); }
+.action__icone { font-size: 32px; }
+.action--favoris { --fond: #dde58a; --bord: #8b8b35; --texte: #4d4d12; }
+.action--erreur {
+  --fond: #d26161; --bord: #7d2f2f; --texte: #3d1111;
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 50%;
+}
+
+/* Colonne "Apprendre d'autres nades" */
+.autres {
+  padding: 32px 28px;
+  background: var(--gris-header);
+  border-radius: 16px;
+}
+.autres__titre {
+  margin-bottom: 28px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.autres .smoke-carte {
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid var(--creme);
+}
+.autres .smoke-carte__image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 28px;
+}
+.autres .smoke-carte__nom { margin-top: 20px; font-size: 22px; }
+.autres .smoke-carte__badge { margin-top: 20px; }
