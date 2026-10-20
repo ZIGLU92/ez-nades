@@ -39,21 +39,41 @@
     <div class="filtres">
       <span class="filtres__titre">Filtres :</span>
       <select class="filtres__select" aria-label="Type de nade">
-        <option>Type de nade</option>
-        <option>Smoke</option>
+       <option value="" selected disabled hidden>Type de nade</option>
+       <option value="smoke">Smoke</option>
       </select>
+
       <select class="filtres__select" aria-label="Équipe">
-        <option>Équipe</option>
-        <option>T</option>
-        <option>CT</option>
+       <option value="" selected disabled hidden>Équipe</option>
+       <option value="t">T</option>
+       <option value="ct">CT</option>
       </select>
-      <select class="filtres__select" aria-label="Type de lancer">
-        <option>Type de lancer</option>
-        <option>Jumpthrow</option>
-        <option>Sans jumpthrow</option>
-        <option>Walk throw</option>
-      </select>
-    </div>
+      
+      <details class="lancer">
+        <summary class="lancer__titre">Type de lancer</summary>
+        <div class="lancer__panneau">
+
+         <div class="interrupteur-ligne">
+          <span>Avec jumpthrow</span>
+          <label class="interrupteur">
+           <input type="checkbox" name="jumpthrow" aria-label="Sans jumpthrow">
+           <span class="interrupteur__piste"></span>
+           </label>
+          <span>Sans jumpthrow</span>
+          </div>
+
+         <div class="interrupteur-ligne">
+          <span>Avec runthrow</span>
+          <label class="interrupteur">
+           <input type="checkbox" name="runthrow" aria-label="Sans runthrow">
+           <span class="interrupteur__piste"></span>
+           </label>
+          <span>Sans runthrow</span>
+          </div>
+
+         </div>
+        </details>
+     </div>
 
     <section class="smokes">
       <a href="apprendre-site-a-stairs.html" class="smoke-carte">

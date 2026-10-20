@@ -203,7 +203,7 @@ a.carte:hover { transform: translateY(-4px); }
   max-width: 1150px;
   min-height: 300px;
   margin: 60px auto 0;
-  background: url("../img/hero/mirage-banniere.jpg") center / cover;
+  background: url("../img/hero/mirage-banniere.png") center / cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -262,7 +262,7 @@ a.carte:hover { transform: translateY(-4px); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  padding: 80px 80px 100px;
+  padding: 90px 40px 80px;
 }
 .smoke-carte {
   display: flex;
@@ -274,14 +274,14 @@ a.carte:hover { transform: translateY(-4px); }
 }
 .smoke-carte:hover { transform: translateY(-4px); }
 .smoke-carte__image {
-  width: 100%;
-  aspect-ratio: 33 / 40;
+  width: clamp(180px, 19.5vw, 320px);
+  aspect-ratio: 250 / 322;
   object-fit: cover;
-  border-radius: 40px;
+  border-radius: 25px;
 }
 .smoke-carte__nom {
-  margin-top: 28px;
-  font-size: clamp(22px, 2.2vw, 32px);
+  margin-top: 32px;
+  font-size: clamp(18px, 2vw, 28px);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -289,12 +289,83 @@ a.carte:hover { transform: translateY(-4px); }
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  margin-top: 24px;
-  padding: 10px 28px;
+  margin-top: 32px;
+  padding: 8px 28px;
   border: 3px solid var(--creme);
   border-radius: 12px;
-  font-size: 20px;
+  font-size: clamp(16px, 1.7vw, 22px);
   font-weight: 700;
   text-transform: uppercase;
 }
-.smoke-carte__picto { height: 36px; }
+.smoke-carte__picto { height: 32px; }
+
+/* Menu "Type de lancer" */
+.lancer { position: relative; }
+.lancer__titre {
+  list-style: none;
+  cursor: pointer;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--creme);
+}
+.lancer__titre::-webkit-details-marker { display: none; }
+.lancer__titre::after { content: " ▼"; font-size: 0.8em; }
+
+.lancer__panneau {
+  position: absolute;
+  top: 140%;
+  left: 0;
+  z-index: 10;
+  display: grid;
+  gap: 20px;
+  width: max-content;
+  padding: 24px 32px;
+  background: var(--gris-header);
+  border: 2px solid var(--orange);
+  border-radius: 8px;
+}
+
+/* Les interrupteurs */
+.interrupteur-ligne {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.interrupteur { position: relative; display: inline-block; cursor: pointer; }
+.interrupteur input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.interrupteur__piste {
+  position: relative;
+  display: block;
+  width: 160px;
+  height: 44px;
+  background: var(--creme);
+  border: 2px solid var(--brun);
+  border-radius: 6px;
+}
+.interrupteur__piste::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 56px;
+  height: 28px;
+  background: var(--brun);
+  border-radius: 4px;
+  transition: transform 0.25s;
+}
+.interrupteur input:checked + .interrupteur__piste::after {
+  transform: translateX(88px);
+}
+.interrupteur input:focus-visible + .interrupteur__piste {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
