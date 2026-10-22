@@ -577,3 +577,78 @@ a.carte:hover { transform: translateY(-4px); }
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+/* ---------- Menu burger ---------- */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 22px;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.burger span {
+  display: block;
+  height: 3px;
+  background: var(--creme);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.header.menu-ouvert .burger span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+.header.menu-ouvert .burger span:nth-child(2) { opacity: 0; }
+.header.menu-ouvert .burger span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
+
+/* ---------- Mobile et tablette ---------- */
+@media (max-width: 960px) {
+
+  /* Header */
+  .header {
+    position: relative;
+    height: 64px;
+    padding: 0 16px;
+    gap: 16px;
+    justify-content: flex-start;
+  }
+  .header__logo img { height: 44px; }
+  .burger { display: flex; }
+  .header__actions { margin-left: auto; }
+  .btn { padding: 8px 16px; font-size: 12px; }
+
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    flex-direction: column;
+    gap: 0;
+    background: var(--gris-header);
+    border-top: 1px solid rgba(255, 224, 186, 0.25);
+  }
+  .header.menu-ouvert .header__nav { display: flex; }
+  .header__nav a { padding: 18px 24px; font-size: 16px; }
+
+  /* Accueil */
+  .hero { min-height: 0; aspect-ratio: 2 / 1; padding: 0 24px; }
+  .hero__titre { font-size: clamp(34px, 11vw, 64px); }
+  .hero__slogan { margin-top: 12px; font-size: clamp(12px, 3.6vw, 24px); }
+
+  .nade-du-jour { padding: clamp(40px, 10vw, 100px) 16px; }
+  .nade-du-jour h2 { font-size: clamp(32px, 9vw, 72px); }
+
+  .cartes { padding: 48px 20px 80px; }
+  .cartes__titre { margin: 0 0 24px; font-size: clamp(18px, 4.5vw, 32px); }
+  .cartes__grille { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; }
+  .carte__image { border-radius: 28px; }
+  .carte__nom { margin-top: 12px; font-size: clamp(16px, 4.2vw, 28px); letter-spacing: 0.08em; }
+  .carte__progression { margin: 8px 4px 0; }
+
+  .connexion { flex-direction: column; align-items: stretch; gap: 28px; padding: 36px 20px; text-align: center; }
+  .connexion h2 { font-size: clamp(20px, 5vw, 36px); }
+  .connexion__liste li { margin: 0 auto; padding: 8px 16px; font-size: 12px; }
+  .connexion__liste li::before { margin-right: 12px; }
+  .connexion__bouton { padding: 16px 24px; font-size: 20px; }
+}
