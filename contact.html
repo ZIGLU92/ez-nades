@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nades CS2 - démo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="header__logo">
+      <img src="img/logo/logo.png" alt="Logo">
+    </a>
+    <nav class="header__nav">
+      <a href="#">Nades favorites</a>
+      <a href="#">Tutoriels</a>
+      <a href="#nade-du-jour">Nade du jour</a>
+      <a href="contact.html">Contactez-nous</a>
+    </nav>
+    <div class="header__actions">
+      <a href="connexion.html" class="btn">S'identifier</a>
+      </div>
+  </header>
+  <main class="page-carte">
+  <section class="contact">
+    <h1 class="contact__titre">Besoin d'aide ?</h1>
+
+    <form class="formulaire" action="#" method="post">
+      <label for="objet" class="sr-only">Objet</label>
+      <input class="champ" type="text" id="objet" name="objet" placeholder="*Objet" required>
+
+      <label for="message" class="sr-only">Message</label>
+      <textarea class="champ champ--message" id="message" name="message" placeholder="*Message" required></textarea>
+
+      <label for="email" class="sr-only">Email afin de vous répondre</label>
+      <input class="champ" type="email" id="email" name="email" placeholder="Email afin de vous répondre">
+
+      <p class="formulaire__note">*Champs obligatoires</p>
+      <button type="submit" class="formulaire__envoyer">Envoyer</button>
+    </form>
+  </section>
+</main>
+</body>

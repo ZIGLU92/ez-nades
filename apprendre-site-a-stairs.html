@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site A - Stairs (Mirage) - Nades CS2</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -19,9 +20,8 @@
       <a href="contact.html">Contactez-nous</a>
     </nav>
     <div class="header__actions">
-      <a href="#" class="btn">S'inscrire</a>
-      <a href="#" class="btn">Se connecter</a>
-    </div>
+      <a href="connexion.html" class="btn">S'identifier</a>
+      </div>
   </header>
 
   <main>
@@ -52,14 +52,18 @@
         </div>
 
         <div class="actions">
-          <button type="button" class="action action--valider">
-            <span>Valider la nade</span>
+          <button type="button" class="action action--valider" data-bascule
+            data-texte-on="Nade validée" data-texte-off="Valider la nade"
+            data-icone-on="☑" data-icone-off="☐" aria-pressed="false">
+            <span class="action__texte">Valider la nade</span>
             <span class="action__icone" aria-hidden="true">☐</span>
-          </button>
-          <button type="button" class="action action--favoris">
-            <span>Ajouter aux favoris</span>
+            </button>
+          <button type="button" class="action action--favoris" data-bascule
+            data-texte-on="Retirer des favoris" data-texte-off="Ajouter aux favoris"
+            data-icone-on="★" data-icone-off="☆" aria-pressed="false">
+            <span class="action__texte">Ajouter aux favoris</span>
             <span class="action__icone" aria-hidden="true">☆</span>
-          </button>
+            </button>
           <a href="contact.html" class="action action--erreur">
             <span>Signaler une erreur</span>
             <span class="action__icone" aria-hidden="true">△</span>

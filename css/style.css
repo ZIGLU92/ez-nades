@@ -433,6 +433,11 @@ a.carte:hover { transform: translateY(-4px); }
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.action.est-actif {
+  --fond: var(--bord);
+  --texte: var(--creme);
 }
 .action:hover { filter: brightness(1.1); }
 .action__icone { font-size: 32px; }
@@ -469,3 +474,106 @@ a.carte:hover { transform: translateY(-4px); }
 }
 .autres .smoke-carte__nom { margin-top: 20px; font-size: 22px; }
 .autres .smoke-carte__badge { margin-top: 20px; }
+
+/* ---------- Pages Connexion et Contact ---------- */
+.header--sans-actions { justify-content: flex-start; gap: 64px; }
+
+.page-carte {
+  display: flex;
+  justify-content: center;
+  padding: clamp(32px, 6vw, 60px) 20px 80px;
+}
+
+.login {
+  width: 100%;
+  max-width: 550px;
+  padding: 40px clamp(20px, 6vw, 72px) 60px;
+  background: var(--gris-header);
+  color: #fff;
+  text-align: center;
+}
+.login__titre {
+  font-size: clamp(26px, 5vw, 36px);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.login__logo { display: block; width: 140px; margin: 28px auto; }
+.login__texte { font-size: 16px; line-height: 1.4; }
+.login__boutons { display: grid; gap: 20px; margin-top: 40px; }
+
+.login__bouton {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  height: 46px;
+  padding: 0 24px;
+  background: var(--gris-bouton);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  font-family: var(--font-texte);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+}
+.login__bouton:hover { filter: brightness(1.15); }
+.login__icone { grid-column: 1; width: 26px; height: 26px; justify-self: center; }
+.login__bouton span { grid-column: 2; }
+
+.login__bouton--steam {
+  height: 86px;
+  background: var(--orange);
+  font-size: 20px;
+  font-weight: 700;
+  grid-template-columns: 96px 1fr 96px;
+}
+.login__bouton--steam .login__icone { width: 42px; height: 42px; }
+
+.contact {
+  width: 100%;
+  max-width: 980px;
+  padding: 48px clamp(20px, 8.6vw, 110px) 72px;
+  background: var(--gris-header);
+}
+.contact__titre { margin-bottom: 24px; font-size: 24px; font-weight: 700; }
+.formulaire { display: grid; gap: 24px; }
+
+.champ {
+  display: block;
+  width: 100%;
+  padding: 16px 28px;
+  background: transparent;
+  color: var(--creme);
+  border: 2px solid var(--creme);
+  border-radius: 6px;
+  font-family: var(--font-texte);
+  font-size: 18px;
+}
+.champ::placeholder { color: #a39583; }
+.champ:focus { outline: 3px solid var(--orange); outline-offset: 2px; }
+.champ--message { min-height: 225px; resize: vertical; }
+
+.formulaire__envoyer {
+  justify-self: start;
+  padding: 14px 40px;
+  background: var(--orange);
+  color: var(--creme);
+  border: 0;
+  border-radius: 999px;
+  font-family: var(--font-texte);
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.formulaire__envoyer:hover { filter: brightness(1.1); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
