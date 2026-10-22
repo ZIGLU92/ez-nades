@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site B - Market (Mirage) - Nades CS2</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__logo">
+      <img src="img/logo/logo.png" alt="Logo">
+    </a>
+    <nav class="header__nav">
+      <a href="#">Nades favorites</a>
+      <a href="#">Tutoriels</a>
+      <a href="#nade-du-jour">Nade du jour</a>
+      <a href="contact.html">Contactez-nous</a>
+    </nav>
+    <div class="header__actions">
+      <a href="connexion.html" class="btn">S'identifier</a>
+      </div>
+  </header>
+
+  <main>
+    <section class="map-hero map-hero--detail">
+      <h1 class="map-hero__titre">Mirage</h1>
+      <div class="map-hero__infos">
+        <p>Site B</p>
+        <p>Market</p>
+        <p>Niveau 1</p>
+      </div>
+    </section>
+
+    <div class="apprendre">
+
+      <div class="apprendre__principal">
+        <p class="version">Testé sur la version 2.91.03 le 21/10/2026. Source : NartOutHere</p>
+
+        <div class="video-cadre">
+          <div class="video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/GroPP2DB4Fk"
+              title="Smoke Site B Market sur Mirage"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="action action--valider" data-bascule
+            data-texte-on="Nade validée" data-texte-off="Valider la nade"
+            data-icone-on="☑" data-icone-off="☐" aria-pressed="false">
+            <span class="action__texte">Valider la nade</span>
+            <span class="action__icone" aria-hidden="true">☐</span>
+            </button>
+          <button type="button" class="action action--favoris" data-bascule
+            data-texte-on="Retirer des favoris" data-texte-off="Ajouter aux favoris"
+            data-icone-on="★" data-icone-off="☆" aria-pressed="false">
+            <span class="action__texte">Ajouter aux favoris</span>
+            <span class="action__icone" aria-hidden="true">☆</span>
+            </button>
+          <a href="contact.html" class="action action--erreur">
+            <span>Signaler une erreur</span>
+            <span class="action__icone" aria-hidden="true">△</span>
+          </a>
+        </div>
+
+        <section class="nade-du-jour" id="nade-du-jour">
+          <h2>Nade du jour</h2>
+        </section>
+      </div>
+
+      <aside class="autres">
+        <h2 class="autres__titre">Apprendre d'autres nades</h2>
+
+        <a href="apprendre-site-a-stairs.html" class="smoke-carte">
+          <img src="img/smokes/site-a-stairs.jpg" alt="Smoke Site A Stairs sur Mirage" class="smoke-carte__image">
+          <h3 class="smoke-carte__nom">Site A - Stairs</h3>
+          <span class="smoke-carte__badge">
+            <img src="img/pictos/smoke-blanc.png" alt="" class="smoke-carte__picto">
+            Smoke
+          </span>
+        </a>
+
+        <a href="apprendre-mid-window.html" class="smoke-carte">
+          <img src="img/smokes/mid-window.jpg" alt="Smoke Mid Window sur Mirage" class="smoke-carte__image">
+          <h3 class="smoke-carte__nom">Mid - Window</h3>
+          <span class="smoke-carte__badge">
+            <img src="img/pictos/smoke-blanc.png" alt="" class="smoke-carte__picto">
+            Smoke
+          </span>
+        </a>
+      </aside>
+
+    </div>
+  </main>
+
+</body>
+</html>
