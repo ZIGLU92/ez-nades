@@ -32,3 +32,22 @@ if (header && burger) {
     lien.addEventListener('click', fermer);
   });
 }
+// Formulaire de contact : pré-remplissage depuis l'adresse de la page
+const champObjet = document.querySelector('#objet');
+const champMessage = document.querySelector('#message');
+
+if (champObjet && champMessage) {
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.has('map')) {
+    const nade = `${params.get('type')} sur ${params.get('map')} – ` +
+                 `${params.get('emplacement')} – ${params.get('localisation')} – ${params.get('niveau')}`;
+
+    champObjet.value = `Erreur sur la ${nade}`;
+    champMessage.value = [
+  'Salut !',
+  `J’ai remarqué une erreur sur la ${nade}.`,
+  'Cordialement',
+].join('\n\n');
+  }
+}
