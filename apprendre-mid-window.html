@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
-<body>
+<body data-nade="mirage-mid-window">
 
   <header class="header">
      <button class="burger" type="button" aria-label="Ouvrir le menu"
@@ -56,18 +56,20 @@
         </div>
 
         <div class="actions">
-          <button type="button" class="action action--valider" data-bascule
+          <button type="button" class="action action--valider" data-bascule="validees"
             data-texte-on="Nade validée" data-texte-off="Valider la nade"
             data-icone-on="☑" data-icone-off="☐" aria-pressed="false">
             <span class="action__texte">Valider la nade</span>
             <span class="action__icone" aria-hidden="true">☐</span>
-            </button>
-          <button type="button" class="action action--favoris" data-bascule
+          </button>
+
+          <button type="button" class="action action--favoris" data-bascule="favoris"
             data-texte-on="Retirer des favoris" data-texte-off="Ajouter aux favoris"
             data-icone-on="★" data-icone-off="☆" aria-pressed="false">
             <span class="action__texte">Ajouter aux favoris</span>
             <span class="action__icone" aria-hidden="true">☆</span>
-            </button>
+          </button>
+          
           <a href="contact.html?type=smoke&map=Mirage&emplacement=Mid&localisation=Window&niveau=Niveau%201"
             class="action action--erreur">
             <span>Signaler une erreur</span>

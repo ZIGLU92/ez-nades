@@ -134,6 +134,7 @@ a.carte:hover { transform: translateY(-4px); }
   height: 100%;
   background: var(--vert-progress);
   border-radius: 999px;
+  transition: width 0.4s;
 }
 .barre__pourcent { font-size: 14px; color: var(--vert-progress); }
 
@@ -672,3 +673,16 @@ a.carte:hover { transform: translateY(-4px); }
   .connexion__liste li::before { margin-right: 12px; }
   .connexion__bouton { padding: 16px 24px; font-size: 20px; }
 }
+.progression-map {
+  max-width: 520px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+  text-align: center;
+}
+.progression-map__titre {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.progression-map .carte__progression { margin: 10px 0 0; }

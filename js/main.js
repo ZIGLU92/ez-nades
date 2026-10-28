@@ -1,14 +1,67 @@
-// Boutons qui changent d'état au clic (Valider la nade, Ajouter aux favoris)
-document.querySelectorAll('[data-bascule]').forEach((bouton) => {
-  const texte = bouton.querySelector('.action__texte');
-  const icone = bouton.querySelector('.action__icone');
+// ---------- Mémoire du navigateur (localStorage) ----------
+const CLE = 'eznades-';
 
-  bouton.addEventListener('click', () => {
-    const actif = bouton.classList.toggle('est-actif');
-    bouton.setAttribute('aria-pressed', actif);
-    texte.textContent = actif ? bouton.dataset.texteOn : bouton.dataset.texteOff;
-    icone.textContent = actif ? bouton.dataset.iconeOn : bouton.dataset.iconeOff;
+function lireListe(nom) {
+  try {
+    return JSON.parse(localStorage.getItem(CLE + nom)) || [];
+  } catch (erreur) {
+    return [];
+  }
+}
+
+function ecrireListe(nom, liste) {
+  try {
+    localStorage.setItem(CLE + nom, JSON.stringify(liste));
+  } catch (erreur) {
+    // stockage indisponible (navigation privée…) : la démo continue sans sauvegarde
+  }
+}
+
+// ---------- Boutons Valider / Favoris ----------
+const idNade = document.body.dataset.nade;
+
+function afficherEtat(bouton, actif) {
+  bouton.classList.toggle('est-actif', actif);
+  bouton.setAttribute('aria-pressed', actif);
+  bouton.querySelector('.action__texte').textContent =
+    actif ? bouton.dataset.texteOn : bouton.dataset.texteOff;
+  bouton.querySelector('.action__icone').textContent =
+    actif ? bouton.dataset.iconeOn : bouton.dataset.iconeOff;
+}
+
+if (idNade) {
+  document.querySelectorAll('[data-bascule]').forEach((bouton) => {
+    const nom = bouton.dataset.bascule;
+    afficherEtat(bouton, lireListe(nom).includes(idNade));
+
+    bouton.addEventListener('click', () => {
+      let liste = lireListe(nom);
+      const actif = !liste.includes(idNade);
+      liste = actif ? [...liste, idNade] : liste.filter((id) => id !== idNade);
+      ecrireListe(nom, liste);
+      afficherEtat(bouton, actif);
+    });
   });
+}
+
+// ---------- Barres de progression ----------
+function afficherProgressions() {
+  const validees = lireListe('validees');
+
+  document.querySelectorAll('[data-progression]').forEach((bloc) => {
+    const map = bloc.dataset.progression;
+    const total = Number(bloc.dataset.total);
+    const faites = validees.filter((id) => id.startsWith(map + '-')).length;
+    const pct = Math.round((faites / total) * 100);
+
+    bloc.querySelector('.barre__remplie').style.width = pct + '%';
+    bloc.querySelector('.barre__pourcent').textContent = pct + '%';
+  });
+}
+
+afficherProgressions();
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) afficherProgressions();
 });
 // Menu burger (mobile)
 const header = document.querySelector('.header');
