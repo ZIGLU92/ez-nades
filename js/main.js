@@ -104,3 +104,27 @@ if (champObjet && champMessage) {
 ].join('\n\n');
   }
 }
+// ---------- Champs du contact qui s'agrandissent avec leur texte ----------
+const champsAuto = document.querySelectorAll('.champ--objet, .champ--message');
+
+function autoAgrandir(champ) {
+  champ.style.height = 'auto';
+  const bordures = champ.offsetHeight - champ.clientHeight;
+  champ.style.height = champ.scrollHeight + bordures + 'px';
+}
+
+champsAuto.forEach((champ) => {
+  champ.addEventListener('input', () => autoAgrandir(champ));
+  autoAgrandir(champ);
+});
+
+window.addEventListener('load', () => champsAuto.forEach(autoAgrandir));
+window.addEventListener('resize', () => champsAuto.forEach(autoAgrandir));
+
+// Pas de retour à la ligne dans l'objet
+const champObjetAuto = document.querySelector('.champ--objet');
+if (champObjetAuto) {
+  champObjetAuto.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') e.preventDefault();
+  });
+}
