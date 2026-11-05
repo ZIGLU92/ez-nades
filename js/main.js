@@ -59,10 +59,24 @@ function afficherProgressions() {
   });
 }
 
-afficherProgressions();
+// ---------- Cases du bloc Niveau (cochées par "Valider la nade") ----------
+function afficherCoches() {
+  const validees = lireListe('validees');
+  document.querySelectorAll('input[data-nade]').forEach((coche) => {
+    coche.checked = validees.includes(coche.dataset.nade);
+  });
+}
+
+function rafraichirProgression() {
+  afficherProgressions();
+  afficherCoches();
+}
+
+rafraichirProgression();
 window.addEventListener('pageshow', (e) => {
-  if (e.persisted) afficherProgressions();
+  if (e.persisted) rafraichirProgression();
 });
+
 // Menu burger (mobile)
 const header = document.querySelector('.header');
 const burger = document.querySelector('.burger');
@@ -128,3 +142,34 @@ if (champObjetAuto) {
     if (e.key === 'Enter') e.preventDefault();
   });
 }
+
+// ---------- Filtres (mobile) : onglets qui ouvrent un panneau ----------
+const onglets = document.querySelectorAll('.menu-filtres__onglet');
+
+function fermerFiltres() {
+  onglets.forEach((onglet) => {
+    onglet.setAttribute('aria-expanded', 'false');
+    document.getElementById(onglet.getAttribute('aria-controls')).classList.remove('est-ouvert');
+  });
+}
+
+onglets.forEach((onglet) => {
+  onglet.addEventListener('click', () => {
+    const panneau = document.getElementById(onglet.getAttribute('aria-controls'));
+    const etaitOuvert = panneau.classList.contains('est-ouvert');
+
+    fermerFiltres();
+    if (!etaitOuvert) {
+      panneau.classList.add('est-ouvert');
+      onglet.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Un clic en dehors du menu, ou la touche Échap, referme tout
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.menu-filtres')) fermerFiltres();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') fermerFiltres();
+});
