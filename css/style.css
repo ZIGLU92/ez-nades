@@ -21,13 +21,29 @@ body {
   color: var(--creme);
   font-family: var(--font-texte);
 }
+html { scroll-padding-top: 120px; }
+
 .header {
+  position: sticky;
+  top: 16px;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 90px;
+  width: calc(100% - 2 * clamp(20px, 6.3vw, 120px));
+  max-width: 1440px;
+  height: 84px;
+  margin: 22px auto 0;
   padding: 0 40px;
-  background: var(--gris-header);
+  background: rgba(66, 66, 66, 0.7);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 224, 186, 0.12);
+  border-radius: 999px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .header { background: var(--gris-header); }
 }
 .header__logo img { height: 64px; }
 .header__nav { display: flex; gap: 48px; }
@@ -147,15 +163,26 @@ a.carte:hover { transform: translateY(-4px); }
   letter-spacing: 0.12em;
 }
 
-.carte--bientot .carte__image { filter: grayscale(1) brightness(0.45); }
-.carte--bientot .carte__nom { opacity: 0.5; }
-.carte__etiquette {
-  margin: 8px 24px 0;
+.carte__visuel { position: relative; }
+.carte__bientot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(15px, 1.7vw, 26px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.12em;
   text-align: center;
-  font-size: 14px;
   text-transform: uppercase;
   color: var(--orange);
 }
+.carte--bientot .carte__image { filter: grayscale(0.7) brightness(0.4); }
+.carte--bientot .carte__nom { opacity: 0.45; }
+.carte--bientot .carte__progression { opacity: 0.35; }
+
 .connexion {
   background: var(--orange) url("../img/hero/fond-orange.jpg") center / cover;
   display: flex;
@@ -653,10 +680,13 @@ a.carte:hover { transform: translateY(-4px); }
 @media (max-width: 960px) {
 
   /* Header */
+  /* Header */
   .header {
-    position: relative;
-    height: 64px;
-    padding: 0 16px;
+    top: 10px;
+    width: calc(100% - 40px);
+    height: 58px;
+    margin-top: 14px;
+    padding: 0 22px;
     gap: 16px;
     justify-content: flex-start;
   }
@@ -668,14 +698,16 @@ a.carte:hover { transform: translateY(-4px); }
   .header__nav {
     display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 10px);
     left: 0;
     right: 0;
     z-index: 20;
     flex-direction: column;
     gap: 0;
-    background: var(--gris-header);
-    border-top: 1px solid rgba(255, 224, 186, 0.25);
+    overflow: hidden;
+    background: rgba(30, 30, 30, 0.96);
+    border: 1px solid rgba(255, 224, 186, 0.15);
+    border-radius: 24px;
   }
   .header.menu-ouvert .header__nav { display: flex; }
   .header__nav a { padding: 18px 24px; font-size: 16px; }
