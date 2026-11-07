@@ -45,18 +45,29 @@ if (idNade) {
 }
 
 // ---------- Barres de progression ----------
+function afficherBarre(bloc, faites, total) {
+  const pct = total ? Math.round((faites / total) * 100) : 0;
+  bloc.querySelector('.barre__remplie').style.width = pct + '%';
+  bloc.querySelector('.barre__pourcent').textContent = pct + '%';
+}
+
 function afficherProgressions() {
   const validees = lireListe('validees');
+  let faitesTotal = 0;
+  let totalTotal = 0;
 
-  document.querySelectorAll('[data-progression]').forEach((bloc) => {
+  document.querySelectorAll('[data-progression]:not([data-progression="toutes"])').forEach((bloc) => {
     const map = bloc.dataset.progression;
     const total = Number(bloc.dataset.total);
-    const faites = validees.filter((id) => id.startsWith(map + '-')).length;
-    const pct = Math.round((faites / total) * 100);
+    const faites = Math.min(validees.filter((id) => id.startsWith(map + '-')).length, total);
 
-    bloc.querySelector('.barre__remplie').style.width = pct + '%';
-    bloc.querySelector('.barre__pourcent').textContent = pct + '%';
+    afficherBarre(bloc, faites, total);
+    faitesTotal += faites;
+    totalTotal += total;
   });
+
+  const globale = document.querySelector('[data-progression="toutes"]');
+  if (globale) afficherBarre(globale, faitesTotal, totalTotal);
 }
 
 // ---------- Cases du bloc Niveau (cochées par "Valider la nade") ----------
